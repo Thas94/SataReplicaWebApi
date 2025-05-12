@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "HXm/A6WqgsW7qB1oOprLIVDIcmNt4VZ0AXpW37JLkEw=",
+  "Source": "SataWebApi",
+  "BasePath": "_content/SataWebApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

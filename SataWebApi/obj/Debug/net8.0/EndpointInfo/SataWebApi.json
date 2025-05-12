@@ -1,0 +1,301 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "SataWebApi",
+    "version": "1.0"
+  },
+  "paths": {
+    "/Agenda/GetAgendaInfo": {
+      "get": {
+        "tags": [
+          "Agenda"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/AgendaModel"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/AgendaModel"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/AgendaModel"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Agenda": {
+        "type": "object",
+        "properties": {
+          "agendaId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "agendaDayId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "agendaTopicId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "startTime": {
+            "type": "string",
+            "nullable": true
+          },
+          "endTime": {
+            "type": "string",
+            "nullable": true
+          },
+          "hasSpeakers": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "hasFacilitators": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "hasPanelMembers": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "agendaDay": {
+            "$ref": "#/components/schemas/AgendaDay"
+          },
+          "agendaLinks": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AgendaLink"
+            },
+            "nullable": true
+          },
+          "agendaTopic": {
+            "$ref": "#/components/schemas/AgendaTopic"
+          }
+        },
+        "additionalProperties": false
+      },
+      "AgendaDay": {
+        "type": "object",
+        "properties": {
+          "dayId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "date": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "textStyle": {
+            "type": "string",
+            "nullable": true
+          },
+          "agenda": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Agenda"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "AgendaLink": {
+        "type": "object",
+        "properties": {
+          "agendaLinkId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "agendaId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "speakerId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "facilitatorId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "panelMemberId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "agenda": {
+            "$ref": "#/components/schemas/Agenda"
+          },
+          "facilitator": {
+            "$ref": "#/components/schemas/Facilitator"
+          },
+          "panelMember": {
+            "$ref": "#/components/schemas/PanelMember"
+          },
+          "speaker": {
+            "$ref": "#/components/schemas/Speaker"
+          }
+        },
+        "additionalProperties": false
+      },
+      "AgendaModel": {
+        "type": "object",
+        "properties": {
+          "speakers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Speaker"
+            },
+            "nullable": true
+          },
+          "facilitators": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Facilitator"
+            },
+            "nullable": true
+          },
+          "panelMembers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PanelMember"
+            },
+            "nullable": true
+          },
+          "agendaId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "dayId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "topic": {
+            "type": "string",
+            "nullable": true
+          },
+          "startTime": {
+            "type": "string",
+            "nullable": true
+          },
+          "endTime": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "AgendaTopic": {
+        "type": "object",
+        "properties": {
+          "agendaTopicId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "agendaTopic1": {
+            "type": "string",
+            "nullable": true
+          },
+          "agenda": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Agenda"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Facilitator": {
+        "type": "object",
+        "properties": {
+          "facilitatorId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "facilitatorName": {
+            "type": "string",
+            "nullable": true
+          },
+          "agendaLinks": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AgendaLink"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PanelMember": {
+        "type": "object",
+        "properties": {
+          "panelMemberId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "panelMemberName": {
+            "type": "string",
+            "nullable": true
+          },
+          "agendaLinks": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AgendaLink"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Speaker": {
+        "type": "object",
+        "properties": {
+          "speakerId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "speakerName": {
+            "type": "string",
+            "nullable": true
+          },
+          "agendaLinks": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AgendaLink"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

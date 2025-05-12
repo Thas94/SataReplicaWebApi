@@ -1,0 +1,1 @@
+Scaffold-DbContext "Data Source=THASPC; Initial Catalog=SataReplicaDB;User ID=Thabiso;Password=Monalis@1;TrustServerCertificate=True" Microsoft.EntityFrameworkCore.SqlServer -Schema "dbo" -OutputDir Entity -Context sataweb_dataContext -noonconfiguring -force

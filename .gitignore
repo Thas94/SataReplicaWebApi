@@ -8,3 +8,6 @@
 /.vs/SataWebApi/v17/.suo
 /.vs/SataWebApi/v17/DocumentLayout.backup.json
 /.vs/SataWebApi/v17/DocumentLayout.json
+/SataWebApi/bin/Debug/net8.0/SataWebApi.dll
+/SataWebApi/bin/Debug/net8.0/SataWebApi.exe
+/SataWebApi/bin/Debug/net8.0/SataWebApi.pdb

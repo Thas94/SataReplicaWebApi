@@ -10,6 +10,20 @@ namespace SataWebApi.Services
     {
         public AgendaService(sataweb_dataContext sataweb_DataContext, IMapper mapper) : base(sataweb_DataContext, mapper) { }
 
+        public async Task<List<AgendaDay>> GetAgendaDays()
+        {
+            var days = new List<AgendaDay>();
+            try
+            {
+                days = _sataweb_DataContext.AgendaDays.Select(x => new AgendaDay { DayId = x.DayId, Date = x.Date.Value, TextStyle = x.TextStyle }).ToList();
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return days;
+        }
+
         public async Task<List<AgendaModel>> GetAgendaInfo()
         {
             var results = new List<AgendaModel>();
@@ -50,7 +64,7 @@ namespace SataWebApi.Services
                                  EndTime = agenda.EndTime,
                                  Speakers = speakers,
                                  Facilitators = facilitator,
-                                 PanelMembers = panelMemebers
+                                 PanelMembers = panelMemebers,
                              }).ToList();
             }
             catch(Exception ex) { 

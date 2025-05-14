@@ -1,0 +1,10 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/SataWebApi/obj/Debug/net8.0/EndpointInfo/SataWebApi.json
+/SataWebApi/obj/Debug/net8.0/SataWebApi.sourcelink.json
+*.vsidx
+/.vs/SataWebApi/v17/.suo
+/.vs/SataWebApi/v17/DocumentLayout.backup.json
+/.vs/SataWebApi/v17/DocumentLayout.json

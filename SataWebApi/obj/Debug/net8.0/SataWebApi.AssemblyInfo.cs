@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SataWebApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f261332997697f5026e34923491d82287cf94041")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a018cdc23450d14400c09160afdd3492673c974e")]
 [assembly: System.Reflection.AssemblyProductAttribute("SataWebApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SataWebApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

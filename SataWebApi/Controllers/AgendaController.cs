@@ -1,16 +1,18 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using SataWebApi.Entity;
 using SataWebApi.Interfaces;
 using SataWebApi.Models;
 
 namespace SataWebApi.Controllers
 {
+    [Authorize]
     [Route("[controller]/[Action]")]
     [ApiController]
     public class AgendaController : ControllerBase
     {
         private readonly IAgendaService _agendaService;
-        public AgendaController(IAgendaService agendaService)
+        public AgendaController(IAgendaService agendaService)   
         {
             _agendaService = agendaService;
         }

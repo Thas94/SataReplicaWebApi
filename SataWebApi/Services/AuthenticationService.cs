@@ -2,6 +2,7 @@
 using System.Security.Claims;
 using System.Text;
 using AutoMapper;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 using SataWebApi.Entity;
 using SataWebApi.Interfaces;
@@ -21,7 +22,7 @@ namespace SataWebApi.Services
         {
             try
             {
-                if (model.UserName == "Test" && model.Password == "Test")
+                if (!_sataweb_DataContext.Users.Any(x => x.Username == model.UserName && x.Password == model.Password && x.Active == true))
                 {
                     return null;
                 }

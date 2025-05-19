@@ -25,6 +25,8 @@ public partial class sataweb_dataContext : DbContext
 
     public virtual DbSet<Speaker> Speakers { get; set; }
 
+    public virtual DbSet<User> Users { get; set; }
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Agenda>(entity =>
@@ -92,6 +94,14 @@ public partial class sataweb_dataContext : DbContext
         modelBuilder.Entity<Speaker>(entity =>
         {
             entity.Property(e => e.SpeakerName).HasMaxLength(250);
+        });
+
+        modelBuilder.Entity<User>(entity =>
+        {
+            entity.ToTable("User");
+
+            entity.Property(e => e.Password).HasMaxLength(50);
+            entity.Property(e => e.Username).HasMaxLength(50);
         });
 
         OnModelCreatingPartial(modelBuilder);
